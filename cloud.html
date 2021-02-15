@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tirth Pipalia</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="Projects/css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="Projects/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Projects/css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand page-scroll"  href="index.html">Home</a>
+            </div>
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <div class="navbar-header">
+                            <a class="navbar-brand page-scroll"  href="Resume/Tirth_SD_RESUME.pdf" style="font-size: small">Resume</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="navbar-header">
+                            <a class="navbar-brand page-scroll"  href="index.html#contact" style="font-size: small;">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section class="bg-primary" id="about">
+                            <!-- <hr class="light"> -->
+                            <head>
+                                <h2 class="text-center">Assimilation of Machine Learning and Cloud Computing</h2>
+                            </head>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 text-center" style="text-align:left">
+
+                    <p></p>
+                    <h3 style="color: black;"><i>Abstract</i></h3>
+                    <p class="text-faded" style="text-align:justify; font-size:medium">
+                        
+                    During the era of IoT and Big Data as an emerging technology, it has major impact on all the
+                    business sectors. This technology results in generating massive amount of electronic data
+                    which contains valuable information. To extract and analyse this information at greater scale
+                    the only choice is Cloud computing and Machine Learning technology. The goal is to identify
+                    best process for Fraud Prediction and Sales prediction. Ten Machine Learning models are
+                    implemented for solving this business question. RandomizedSearchCV is implemented for
+                    hyper parameter tuning and time required by model for training and prediction is also
+                    evaluated. Even SMOTE is applied for imbalanced dataset. Classification models are validated
+                    based on Recall, F1, Confusion Matric ROC-AUC values. Regression Models are evaluated
+                    based on MAE and MSE score. Research is conducted using Amazon Web Services and python
+                    for predictive analytics by assimilating Machine Learning and Cloud Computing technologies.
+                    </p>
+                    <h3 style="color: black;"><i>Objective</i></h3>
+                    <p class="text-faded" style="font-size: small">
+                        - Perform EDA (Exploratory Data Analysis) for generating preliminary insights from the
+dataset. <br>
+- Setting up the <i style="font-size: medium;">hyper-parameters</i> for essential Machine Learning model using
+<i style="font-size: medium;">RandomizedSearchCV</i>. <br>
+- Feature engineering to obtain the impact of important features in the dataset. <br>
+- Evaluate and validate results of ML models using metrics like <i style="font-size: medium;">Accuracy, F1, Recall Score
+    and RMSE, MAE.</i> <br>
+- Setting up the services of AWS which will make the implementation of predictive
+analysis easier and efficient. <br>
+- Setting up <i style="font-size: medium;">AWS S3 permission,SageMaker,EC2</i>  instance and installation of essential packages for performing
+cloud integration task.
+
+                    </p>
+                    <h3 style="color: black;"><i>Methodology</i></h3>
+                    <p class="text-faded" style="font-size: small">
+                    1. Data Collection <br>
+                    2. Data Wrangaling <br>
+                    3. Handeling Imbalanced Data - SMOTE (Synthetic Minority
+                    Oversampling Technique) <br>
+                    4. Setting up AWS: S3,EC2,SageMaker,Jupyter Notebook Configuration <br>
+                    5. Evaluation Metrics (Confusion Matrix, Mean Squared Error) <br>
+                    6. ML Algorithms: Decision Tree, Light GBM, LDA, Random Forest, Ridge, LASSO, Linear Reg., XGBoost, AdaBoost <br>
+                    </p>
+                    <h3 style="color: black;"><i>Analysis & Findings</i></h3>
+                    <p class="text-faded" style="font-size: small">
+                        • Before applying SMOTE there were 123540 class with the
+                        genuine transaction and 2823 with the fraudulent transaction which was later balanced
+                        equally for value of 123540 observation for each class. <br> <br>
+                        • Random Forest is the model which has the best Accuracy, Recall
+and F1 score for tuned and default parameters. It consumes 0.296 s for prediction when
+parameters are tuned and 0.406 s when parameters are set for default making the most timeconsuming model for prediction. <br> <br>
+• In Sales prediction Linear regression is the model with least error rate based on RMSE and
+MAE values followed by Ridge Regression. The worst score is for both the tree-based
+regressor model where GBT model has MAE=1.8 highest among all the models and XGBoost
+having RMSE=4.7 making it the least preferable model for the sales prediction task. <br> <br>
+• Total loss of revenue is -3883547.345768667. It also indicated that this loss was due to the large
+frequency of fraudulent transaction. <br>
+
+                    </p>
+                    <h3 style="color: black;"><i>Result</i></h3>
+                    <p class="text-faded" style="font-size: small">
+                        <table  border="2" bordercolor = "black">
+                            <thead>
+                                <tr bgcolor="orange">
+                                    <th style="color: black;">Model             </th>
+                                    <th style="color: black;">Accuracy(%)       </th>
+                                    <th style="color: black;">recall(%)         </th>
+                                    <th style="color: black;">F1(%)             </th>
+                                    <th style="color: black;">ROC_AUC(%)        </th>
+                                    <th style="color: black;">Training Time(s)  </th>
+                                    <th style="color: black;">Tuning time(s)    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="font-size: small;">Decision Tree</td>
+                                    <td style="font-size: small;">88.8396484 </td>
+                                    <td style="font-size: small;">16.20481080 </td>
+                                    <td style="font-size: small;">27.5994250</td>
+                                    <td style="font-size: small;">90.8604781</td>
+                                    <td style="font-size: small;">0.308</td>
+                                    <td style="font-size: small;">17.4</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: small;">Random Forest</td>
+                                    <td style="font-size: small;">98.3325947</td>
+                                    <td style="font-size: small;">65.96958174</td>
+                                    <td style="font-size: small;">60.5848974</td>
+                                    <td style="font-size: small;">77.6681912</td>
+                                    <td style="font-size: small;">65.774</td>
+                                    <td style="font-size: small;">1302</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: small;">LDA</td>
+                                    <td style="font-size: small;">84.4338577</td>
+                                    <td style="font-size: small;">12.81414830</td>
+                                    <td style="font-size: small;">22.7172717</td>
+                                    <td style="font-size: small;">92.0346958</td>
+                                    <td style="font-size: small;">0.615</td>
+                                    <td style="font-size: small;">5.4</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: small;">Light GBM</td>
+                                    <td style="font-size: small;">91.8771696</td>
+                                    <td style="font-size: small;">20.51138484</td>
+                                    <td style="font-size: small;">33.3181749</td>
+                                    <td style="font-size: small;">90.3260558</td>
+                                    <td style="font-size: small;">1.448</td>
+                                    <td style="font-size: small;">99.5</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: small;">AdaBoost</td>
+                                    <td style="font-size: small;">93.2306669</td>
+                                    <td style="font-size: small;">21.90321833</td>
+                                    <td style="font-size: small;">34.0410219</td>
+                                    <td style="font-size: small;">84.9888818</td>
+                                    <td style="font-size: small;">180.171</td>
+                                    <td style="font-size: small;">2352</td>
+                                </tr>
+                            </tbody>
+                        </table> 
+                        <br> <br>
+                        <table border="2" bordercolor = "black">
+                            <thead>
+                                <tr bgcolor="orange">
+                                    <th style="color: black;">Model                     </th>
+                                    <th style="color: black;">Mean Absolute Error       </th>
+                                    <th style="color: black;">Root Mean Squared Error   </th>
+                                    <th style="color: black;">Traing time(s)            </th>
+                                </tr>
+                                <tr>
+                                    <td>LASSO</td>
+                                    <td>0.08339548200648535 </td>
+                                    <td>0.11536865510851727</td>
+                                    <td>0.04</td>
+                                </tr>
+                                <tr>
+                                    <td>Ridge</td>
+                                    <td>0.0010036470043190342</td>
+                                    <td>0.001882263872915812</td>
+                                    <td>0.032</td>
+                                </tr>
+                                <tr>
+                                    <td>XGBoost</td>
+                                    <td>1.1313262058563323</td>
+                                    <td>4.793739223668036</td>
+                                    <td>19.919</td>
+                                </tr>
+                                <tr>
+                                    <td>Linear Regression</td>
+                                    <td>0.0005448947680783427</td>
+                                    <td>0.0014938985645114012</td>
+                                    <td>0.08</td>
+                                </tr>
+                                <tr>
+                                    <td>Gradient Boosted Tree</td>
+                                    <td>1.8431233686568962</td>
+                                    <td>3.392379767811959</td>
+                                    <td>39.152</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </p>
+                    <p><br></p> <br> <br>
+                   <a href="Resume/Tirth-Pipalia-presentation.pptx" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">View Presentation</a>
+                   <a href="https://github.com/tirth-pipalia/Assimilation-of-Machine-Learning-and-Cloud-Computing/blob/main/10524692_Applied_Research_Project_Code.ipynb" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
+                   <a href="Resume/Tirth-Pipalia-Report.pdf" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Link to Project Report</a>
+                </div>
+                <div class="col-lg-4 text-center">
+
+                <img src="img/cloudf1.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">Payment Type v/s Region</p>
+                <img src="img/cloudf2.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">Highest Fraud Region</p>
+                <img src="img/cloudf3.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">Balanced Data-SMOTE</p>
+                <img src="img/cloudf4.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">Significant Features</p>
+                <img src="img/cloudf5.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">ROC Plot</p>
+                <img src="img/cloudf6.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">MAE-RMSE Plot</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+</body>
+
+</html>

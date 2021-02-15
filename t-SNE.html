@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tirth Pipalia</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="Projects/css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="Projects/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Projects/css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand page-scroll"  href="index.html">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <div class="navbar-header">
+                            <a class="navbar-brand page-scroll"  href="Resume/Tirth_SD_RESUME.pdf" style="font-size: small">Resume</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="navbar-header">
+                            <a class="navbar-brand page-scroll"  href="index.html#contact" style="font-size: small;">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section class="bg-primary" id="about">
+        <!-- <hr class="light"> -->
+            <head>
+                <h2 class="text-center">Clustring using t-SNE and K-Means Algorithm</h2>
+            </head>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 text-center" style="text-align: left">
+                    <p></p>
+                    <h3 style="color: black;"> <i>Problem Statement</i></h3>
+                    <p class="text-faded" style="text-align:justify; font-size:medium">
+                        t- distributed Stochastic Neighbour Embedding is a machine learning algorithm.
+It is non-linear dimensionality reduction technique well suited for embedding
+high-dimension data for visualization in a low-dimension space of two or three
+dimensions. t-SNE often provides early insights on whether the data is separable or not. Because in
+unsupervised learning the target variable is unknown and there can be
+several unknown classes about which information or knowledge is minimum. So, clustering approach can be implemented to counter this problem.
+                    </p>
+                    <h3 style="color: black;"><i>Solution</i></h3>
+                    <p class="text-faded" style="font-size: small">
+                    - Applying t-SNE to whole dataset having 11 classes was not the best choice as it would lead inaccurate clusters formation.
+                    <br>
+                    - Hence, dataset was divied into 3 subset: Subset1 – Fixed Acidity, Volatile Acidity, Citric Acid, pH, <br>
+                    Subset2 – Fixed Acidity, Alcohol, Residual Sugar, Sulphates, <br>
+                    Subset3 – Fixed Acidity, Alcohol, Citric Acid, pH, Volatile Acid. <br>
+                    <br>
+                    - K-Means implementation for elbow plot. The use of elbow plot is to run k-means clustering 
+                    on the dataset for a range of values of k(1 to 10) and for each value of k, calculate the
+                    sum of squared errors(SSE). Then plotting line chart of the SSE for each value
+                    of k.
+                    <br> <br>
+                    - The value of k at which improvement in distortion declines the most is called the elbow, at which we
+should stop dividing the data into further clusters.
+                    </p>
+                    <h3 style="color: black;"><i>Analysis and Findings</i></h3>
+                    <p class="text-faded" style="font-size: small">
+                    Yellow - citric acid < 0.33(0) and volatile acidity(0) <= 0.27 <br>
+                    Blue – citric acid < 0.33(0) and volatile acidity(1) > 0.27 <br>
+                    Red – citric acid >= 0.33(1) and volatile acidity(1) > 0.27 <br>
+                    Purple – citric acid(1) >= 0.33 and volatile acidity(0) <= 0.27
+                        <table border="2" bordercolor = "black">
+                            <thead>
+                                <tr>
+                                    <th>Color</th>
+                                    <th>Label</th>
+                                    <th>Citric Acid</th>
+                                    <th>Volatile Acicdity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="color: yellow;">Yellow</td>
+                                    <td>Y</td>
+                                    <td style="text-align: center;">0</td>
+                                    <td style="text-align: center;">0</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: blue;">Blue</td>
+                                    <td>B</td>
+                                    <td style="text-align: center;">0</td>
+                                    <td style="text-align: center;">1</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: red;">Red</td>
+                                    <td>R</td>
+                                    <td style="text-align: center;">1</td>
+                                    <td style="text-align: center;">1</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: purple;">Purple</td>
+                                    <td>P</td>
+                                    <td style="text-align: center;">1</td>
+                                    <td style="text-align: center;">0</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </p>
+                    
+                    <p class="text-faded" style="font-size: small">
+                        Red1 - fixed acidity(1) >= 6.85 and residual sugar(1) >= 6.20 <br>
+                        Red2 – fixed acidity(0) < 6.85 and residual sugar(1) >= 6.20 <br>
+                        Purple1 – fixed acidity(1) >=6.85 and residual sugar(0) < 6.20  <br>
+                        Purple2 – fixed acidity(0) < 6.85 and residual sugar(0) < 6.20
+                            <table border="2" bordercolor = "black">
+                                <thead>
+                                    <tr>
+                                        <th>Color</th>
+                                        <th>Label</th>
+                                        <th>Fixed Acidity</th>
+                                        <th>Residual Sugar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align: center; color:red" rowspan="2">Red</td>
+                                        <td style="text-align: center;">S2R1</td>
+                                        <td style="text-align: center;">1</td>
+                                        <td style="text-align: center;">1</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;">S2R2</td>
+                                        <td style="text-align: center;">0</td>
+                                        <td style="text-align: center;">1</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center; color: purple;" rowspan="2" >Purple</td>
+                                        <td style="text-align: center;">S2P1</td>
+                                        <td style="text-align: center;">1</td>
+                                        <td style="text-align: center;">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;">S2P2</td>
+                                        <td style="text-align: center;">0</td>
+                                        <td style="text-align: center;">0</td>
+                                    </tr>
+                                </tbody>
+    
+                            </table>
+                        </p>
+
+                        <p class="text-faded" style="font-size: small">
+                            Red1 – fixed acidity(1) >= 6.85 volatile acidity(1) > 0.27 alcohol(1) >=10.5 <br>
+                            Red2 – fixed acidity(1) >=6.85 volatile acidity(1) > 0.27 alcohol(0) < 10.5 <br>
+                            Purple1 – fixed acidity(0) < 6.85 volatile acidity(1) >0.27 alcohol(0) < 10.5 <br>
+                            Purple2 – fixed acidity(0) < 6.85 volatile acidity(1) >0.27 alcohol(1)>=10.5 <br>
+                            Yellow1 – fixed acidity(0) < 6.85 volatile acidity(0) <= 0.27 alcohol(0) < 10.5 <br>
+                            Yellow2 – fixed acidity(0) < 6.58 volatile acidity(0) <=0.27 alcohol(1) >= 10.5 <br>
+                            Blue1 – fixed acidity(1) >=6.85 volatile acidity(0) <=0.27 alcohol(1) >= 10.5 <br>
+                            Blue2 – fixed acidity(1) >=6.85 volatile acidity(0) <=0.27 alcohol(0) < 10.5
+                                <table border="2" bordercolor = "black">
+                                    <thead>
+                                        <tr>
+                                            <th>Color</th>
+                                            <th>Label</th>
+                                            <th>Fixed Acidity</th>
+                                            <th>Volatile Acidity</th>
+                                            <th>Alcohol</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align: center; color:red" rowspan="2">Red</td>
+                                            <td style="text-align: center;">S3R1</td>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">1</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">S3R2</td>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; color: purple;" rowspan="2" >Purple</td>
+                                            <td style="text-align: center;">S3P1</td>
+                                            <td style="text-align: center;">0</td>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">S3P2</td>
+                                            <td style="text-align: center;">0</td>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">1</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; color: yellow;" rowspan="2">Yellow</td>
+                                            <td style="text-align: center;">S3Y1</td>
+                                            <td style="text-align: center;">0</td>
+                                            <td style="text-align: center;">0</td>
+                                            <td style="text-align: center;">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">S3Y2</td>
+                                            <td style="text-align: center;">0</td>
+                                            <td style="text-align: center;">0</td>
+                                            <td style="text-align: center;">1</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; color:blue" rowspan="2">Blue</td>
+                                            <td style="text-align: center;">S3B1</td>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">0</td>
+                                            <td style="text-align: center;">1</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">S3B2</td>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-align: center;">0</td>
+                                            <td style="text-align: center;">0</td>
+                                        </tr>
+                                    </tbody>
+        
+                                </table>
+                            </p>                    
+
+                        
+                    
+                    <p><br></p>
+                   <a href="https://docs.google.com/presentation/d/1ewfbc-4nWLGnuFK5DeA7jikWK7DlALVheyr765B7KA8/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">View Presentation</a>
+                   <a href="https://github.com/tirth-pipalia/Unsupervised-Learning-Project" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
+                   <a href="https://docs.google.com/a/berkeley.edu/document/d/1vtCwW_MkwTBmH51UHi6HuffCid3kYy5zv86zx1g8YSg/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Link to Project Report</a>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <img src="img/tsne1.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                    <p style="font-size: smaller;">Payment Type v/s Region</p>
+                    <img src="img/tsne2.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                    <p style="font-size: smaller;">Payment Type v/s Region</p>
+                    <img src="img/tsne3.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                    <p style="font-size: smaller;">Payment Type v/s Region</p>
+                    <img src="img/tsne4.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                    <p style="font-size: smaller;">Payment Type v/s Region</p>
+                    <img src="img/tsne5.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                    <p style="font-size: smaller;">Payment Type v/s Region</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+</body>
+
+</html>
