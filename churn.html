@@ -41,20 +41,22 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll"  href="index.html">Home</a>
             </div>
+
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="index.html#contact">Contact</a>
+                        <div class="navbar-header">
+                            <a class="navbar-brand page-scroll"  href="Resume/Tirth_SD_RESUME.pdf" target="_blank" style="font-size: small">Resume</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="navbar-header">
+                            <a class="navbar-brand page-scroll"  href="index.html#contact" style="font-size: small;">Contact</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -64,60 +66,194 @@
     </nav>
 
     <section class="bg-primary" id="about">
+        <head>
+            <h2 class="text-center">Employee Churn Prediction</h2>
+</head>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 text-center" style="text-align: left">
                     <!-- <hr class="light"> -->
-                    <head>
-                        <h2>Employee Churn Prediction</h2>
-                        <a href="https://docs.google.com/presentation/d/1ewfbc-4nWLGnuFK5DeA7jikWK7DlALVheyr765B7KA8/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">View Presentation</a>
-                        <a href="https://github.com/tirth-pipalia/Employee_Churn_Prediction/blob/main/Employee_Churn_Prediction.ipynb" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
-                        <a href="https://docs.google.com/a/berkeley.edu/document/d/1vtCwW_MkwTBmH51UHi6HuffCid3kYy5zv86zx1g8YSg/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Link to Project Report</a>         
-                    </head>
+
                     <p></p>
-                    <h4>THE PROBLEM</h4>
-                    <p class="text-faded" style="font-size: small">
-                        Here will be the objective/goal/motivation for 
-                        project
+                    <h3 style="color: black;"><i>THE PROBLEM</i></h3>
+                    <p class="text-faded" style="font-size: medium;text-align:justify">
+                        Employee turn-over (also known as "employee churn") is a costly problem for companies. The true cost of replacing an employee can often be quite large. A study by the Center for American Progress found that companies typically pay about one-fifth of an employee’s salary to replace that employee, and the cost can significantly increase if executives or highest-paid employees are to be replaced. In other words, the cost of replacing employees for most employers remains significant. This is due to the amount of time spent to interview and find a replacement, sign-on bonuses, and the loss of productivity for several months while the new employee gets accustomed to the new role.
                     </p>
-                    <h4>SOLUTION</h4>
+                    <h3 style="color: black;"><i>APPROACH</i></h3>
                     <p class="text-faded" style="font-size: small">
-                    Description of the project i.e. technology used/methodology/approch/
+                    1. Importing essential libraries like:
+                    pandas for perfroming actions like importing data, deleting columns.
+                    Numpy for performing mathematical calculations on arrays.
+                    plotly, matplotlib, seaborn for plotting interactive graphs.
+                    imblearn package which has class over_sampling and in it function named SMOTE whihc is useful in balancing highly imbalanced dataset.
+                    and most important package for Machine Learning that is Sklearn which helps in eveluating result, splliting the dataset, tunning the hyper-paramentes, preprocessing the data,etc.
+<br>                    
+                    
+                    2. 
+                    Data is imported using padnas package and csv file is loaded. It has 27 columns of which 8 are of data type object and rest of integer.
+                    After performing Exploratory Data Analysis: <br>
+                    - Many histograms are tail-heavy; indeed several distributions are right-skewed (e.g. MonthlyIncome DistanceFromHome, YearsAtCompany). Data transformation methods may be required to approach a normal distribution prior to fitting a model to the data. <br>
+                    - Age distribution is a slightly right-skewed normal distribution with the bulk of the staff between 25 and 45 years old. <br>
+                    - EmployeeCount and StandardHours are constant values for all employees. They're likely to be redundant features. <br>
+                    - Employee Number is likely to be a unique identifier for employees given the feature's quasi-uniform distribution. <br>
+                    - Laboratory Technican has the highest pay followed by Sales Executive and Research Scientist. <br> 
+                    - Research Director having least pay rate followd by manager and Helthcare Representative. <br>
+
+                    3. Data Pre-processing and Wrangling: <br>
+                    Age if converted into binary form where employee above 39 has value 0 else 1, for PastEmployee tag Yes = 1 and No = 0 is assigned.
+                    Also Gender and Overtime class is converted using apply() and user defined function. Pandas get_dummies() function is used for converting other categorical variables into dummy/indicator variables.
+                     Data is divided where X:Independent Variables and Y:Target Varivable. Normalization is performed so that each feature has mean 0 and variance 1.
+                      Then data is splitted into tain-set and test-set in the ratio of 70:30 respectively. To balance the imbalance data SMOTE techniques is implemented.
+                    <br>
+                    4. Hyper-paramentes tuning: RandomizedSearchCV and GridSearchCV is implemented to find the best parameters for the models.
+                    <table border="2" bordercolor = "black">
+                        <thead><tr style="color: #ffc107;" bgcolor="black">
+                            <th style="text-align: center;">Model</th>
+                            <th style="text-align: center;">Tuning Time</th>
+                            <th style="text-align: center;">Best Score</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td  style="text-align: center">XGBoost</td  style="text-align: center">
+                                <td  style="text-align: center">113.663 s</td  style="text-align: center">
+                                <td  style="text-align: center">0.9836</td  style="text-align: center">
+                            </tr>
+                            <tr>
+                                <td  style="text-align: center">AdaBoost</td  style="text-align: center">
+                                <td  style="text-align: center">4.662 s</td  style="text-align: center">
+                                <td  style="text-align: center">0.8731</td  style="text-align: center">
+                            </tr>
+                            <tr>
+                                <td  style="text-align: center">LightGBM</td  style="text-align: center">
+                                <td  style="text-align: center">17.968 s</td  style="text-align: center">
+                                <td  style="text-align: center">0.8649</td  style="text-align: center">
+                            </tr>
+                            <tr>
+                                <td  style="text-align: center">Logistic regression</td  style="text-align: center">
+                                <td  style="text-align: center">51.291 s</td  style="text-align: center">
+                                <td  style="text-align: center">0.8735</td  style="text-align: center">
+                            </tr>
+                        </tbody>
+                    </table> 
                     </p>
-                    <h4>Achivement</h4>
+                    <h3 style="color: black;"><i>EVALUATION</i></h3>
                     <p class="text-faded" style="font-size: small">
-                    Final Result/ Outputs
+                    <table border="2" bordercolor="black">
+                        <thead  >
+                            <tr style="color: #ffc107;" bgcolor="black">
+                                <th style="text-align: center;">Model</th>
+                                <th style="text-align: center;">True Positive</th>
+                                <th style="text-align: center;">True Negative</th>
+                                <th style="text-align: center;">False Positive</th>
+                                <th style="text-align: center;">False Negative</th>
+                                <th style="text-align: center;">Accuracy</th>
+                                <th style="text-align: center;">Recall</th>
+                                <th style="text-align: center;">F1</th>
+                                <th style="text-align: center;">AUCROC</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td  style="text-align: center">XGBoost</td  style="text-align: center">
+                                <td  style="text-align: center">27</td  style="text-align: center">
+                                <td  style="text-align: center">360</td  style="text-align: center">
+                                <td  style="text-align: center">14</td  style="text-align: center">
+                                <td  style="text-align: center">40</td  style="text-align: center">
+                                <td  style="text-align: center">0.8775</td  style="text-align: center">
+                                <td  style="text-align: center">0.6585</td  style="text-align: center">
+                                <td  style="text-align: center">0.5000</td  style="text-align: center">
+                                <td  style="text-align: center">0.6827</td  style="text-align: center">
+                            </tr>
+                            <tr>
+                                <td  style="text-align: center">AdaBoost</td  style="text-align: center">
+                                <td  style="text-align: center">27</td  style="text-align: center">
+                                <td  style="text-align: center">360</td  style="text-align: center">
+                                <td  style="text-align: center">14</td  style="text-align: center">
+                                <td  style="text-align: center">40</td  style="text-align: center">
+                                <td  style="text-align: center">0.8775</td  style="text-align: center">
+                                <td  style="text-align: center">0.6585</td  style="text-align: center">
+                                <td  style="text-align: center">0.5000</td  style="text-align: center">
+                                <td  style="text-align: center">0.6827</td  style="text-align: center">
+                            </tr>
+                            <tr>
+                                <td  style="text-align: center">LightGBM</td  style="text-align: center">
+                                <td  style="text-align: center">30</td  style="text-align: center">
+                                <td  style="text-align: center">343</td  style="text-align: center">
+                                <td  style="text-align: center">31</td  style="text-align: center">
+                                <td  style="text-align: center">37</td  style="text-align: center">
+                                <td  style="text-align: center">0.8458</td  style="text-align: center">
+                                <td  style="text-align: center">0.4918</td  style="text-align: center">
+                                <td  style="text-align: center">0.4687</td  style="text-align: center">
+                                <td  style="text-align: center">0.6824</td  style="text-align: center">
+                            </tr>
+                            <tr>
+                                <td  style="text-align: center">Logistic Regression</td  style="text-align: center">
+                                <td  style="text-align: center">50</td  style="text-align: center">
+                                <td  style="text-align: center">285</td  style="text-align: center">
+                                <td  style="text-align: center">89</td  style="text-align: center">
+                                <td  style="text-align: center">17</td  style="text-align: center">
+                                <td  style="text-align: center">0.7596</td  style="text-align: center">
+                                <td  style="text-align: center">0.3597</td  style="text-align: center">
+                                <td  style="text-align: center">0.4854</td  style="text-align: center">
+                                <td  style="text-align: center">0.7541</td  style="text-align: center">
+                            </tr>
+                        </tbody>
+                    </table>
                     </p>
-                    <h4>Limitation/Future Work</h4>
+                    <h3 style="color: black;">
+                        <i>IMPORTANT FEATURES</i>
+                    </h3>
                     <p class="text-faded" style="font-size: small">
-                    Scope of changes or improvment/ Future scope
+                        <table border="2" bordercolor="black">
+                            <thead>
+                                <tr style="color: #ffc107;" bgcolor="black">
+                                    <th style="text-align: center;">Model</th>
+                                    <th style="text-align: center;">First</th>
+                                    <th style="text-align: center;">Second</th>
+                                    <th style="text-align: center;">Third</th>
+                                    <th style="text-align: center;">Least</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: center;">XGBoost</td>
+                                    <td style="text-align: center;">Overtime 0.255203</td>
+                                    <td style="text-align: center;"> JobLevel 0.087756 </td>
+                                    <td style="text-align: center;"> JobRole_Sales Executive 0.071910</td>
+                                    <td style="text-align: center;">JobRole_Research Director 0.00000</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">AdaBoost</td>
+                                    <td style="text-align: center;">WorkLifeBalance 0.0875</td>
+                                    <td style="text-align: center;">TrainingTimeLastYear 0.0875</td>
+                                    <td style="text-align: center;">TrainingTimeLastYear 0.0750</td>
+                                    <td style="text-align: center;">Department_Human Resources 0.0000</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">LightGBM</td>
+                                    <td style="text-align: center;">JobSatisfaction 576</td>
+                                    <td style="text-align: center;"> StockOptionLevel 546</td>
+                                    <td style="text-align: center;">NumCompaniesWorked 508</td>
+                                    <td style="text-align: center;">PerformanceRating 0s</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </p>
-                    <ul class="text-faded" style="font-size: small">
-                        <li>
-                            <h5>Some heading/bullet point
-                                <p>
-                                    <br>
-                                    Some more explanation
-                                </p>
-                                <p>
-                                    <br>
-                                </p>
-                            </h5>Explanation/Description
-                        </li>
-                        <li>
-                            <h5>Some heading/bullet point</h5>Explanation/Description
-                        </li>
-                    </ul> 
                     <p><br></p>
-                   <a href="https://docs.google.com/presentation/d/1ewfbc-4nWLGnuFK5DeA7jikWK7DlALVheyr765B7KA8/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">View Presentation</a>
                    <a href="https://github.com/tirth-pipalia/Employee_Churn_Prediction/blob/main/Employee_Churn_Prediction.ipynb" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
-                   <a href="https://docs.google.com/a/berkeley.edu/document/d/1vtCwW_MkwTBmH51UHi6HuffCid3kYy5zv86zx1g8YSg/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Link to Project Report</a>
                 </div>
-                <div class="col-lg-4 text-center" style="padding-top: 100px">
-                <img src="img/portfolio/1.jpg" class="img-responsive" alt="" style="margin :auto" height="300" width="300">
-                <p>Fig. Title</p>
-                <img src="img/portfolio/1.jpg" class="img-responsive" alt="" style="margin :auto" height="300" width="300">
-                <p>Fig. Title</p>
+                <div class="col-lg-4 text-center">
+                <img src="img/churn1.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">Job With Highest Pay</p>
+                <img src="img/churn2.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">ROC Graph</p>
+                <img src="img/churnLGBM.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">LightGBM Important Features</p>
+                <img src="img/churnAda.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">Class Histogram</p>
+                <img src="img/churnheat.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">Heat-Map</p>
                 </div>
             </div>
         </div>
