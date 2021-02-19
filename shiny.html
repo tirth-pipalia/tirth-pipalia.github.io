@@ -41,12 +41,7 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+
                 <a class="navbar-brand page-scroll"  href="index.html">Home</a>
             </div>
 
@@ -54,7 +49,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="index.html#contact">Contact</a>
+                        <div class="navbar-header">
+                            <a class="navbar-brand page-scroll"  href="Resume/Tirth_SD_RESUME.pdf" style="font-size: small" target="_blank">Resume</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="navbar-header">
+                            <a class="navbar-brand page-scroll"  href="index.html#contact" style="font-size: small;">Contact</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -64,60 +66,50 @@
     </nav>
 
     <section class="bg-primary" id="about">
+        <head>
+            <h2 class="text-center">Statistical and Machine Learning App</h2>
+</head>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 text-center" style="text-align: left">
-                    <!-- <hr class="light"> -->
-                    <head>
-                        <h2>Statistical and Machine Learning Application</h2>
-                        <a href="https://docs.google.com/presentation/d/1ewfbc-4nWLGnuFK5DeA7jikWK7DlALVheyr765B7KA8/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">View Presentation</a>
-                        <a href="https://github.com/tirth-pipalia/Employee_Churn_Prediction/blob/main/Employee_Churn_Prediction.ipynb" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
-                        <a href="https://docs.google.com/a/berkeley.edu/document/d/1vtCwW_MkwTBmH51UHi6HuffCid3kYy5zv86zx1g8YSg/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Link to Project Report</a>         
-                    </head>
                     <p></p>
-                    <h4>THE PROBLEM</h4>
-                    <p class="text-faded" style="font-size: small">
-                        Here will be the objective/goal/motivation for 
-                        project
+                    <h3 style="color: #ffd23c;"><i>Concept</i></h3>
+                    <p class="text-faded" style="font-size: medium;text-align:justify;color:black">
+                        R language is one of the most popular language for satistical modelling and analysis, but it has limitaions when is comes to learning and implementing.
+                        This is where Shiny a package in R from RStudio helps to make easy to build interactive web apps straight from R. This apps can be hosted as standalone apps on webpage or embeded with R markdown. 
+                        Developed application provides the features like Importing data, Descriptive Analysis, implementing probabilistic models on data.
+                        It provides easy to understand GUI in which all the functionalities can be performed using click of mouse. There is no need to write code of lines for applying models on data or for vizulization.
+                        It can provide choise of 3 probabilistic models: 1) Binomial 2) Poission 3) Geometric and 3 ML Regression Models: 1) Support Vector Regression 2) Simple Linear Regression 3) Decision Tree Regression 
                     </p>
-                    <h4>SOLUTION</h4>
-                    <p class="text-faded" style="font-size: small">
-                    Description of the project i.e. technology used/methodology/approch/
+                    <h3 style="color: #ffd23c;"><i>Approch</i></h3>
+                    <p class="text-faded" style="font-size: small;color:black">
+                    RStudio is used as the integrted development environment for R. Dependencies such as e1071 for Support Vector Machine, rpart for Decision Tree Regressor, caTools for basic windows utility functions.The library ggplot2 helps for creating graphics based on The Grammer of Graphis in which user just need sto provide the data and tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and ggplot2 takes care of the details hence saving time in assign values of variables and setting attributes.
+                    For creating standalone GUI based application Shiny packages is required. Once this libraray is installed the applicatioon is didved into 2 parts: Server side  and User Interface.
+                    Server.R file has the code which will implment features on data selected by the user. UI.R file containf the front-end part such as dropdown list, Radio buttons, Displaying graphs, Descriptive data, etc.
                     </p>
-                    <h4>Achivement</h4>
-                    <p class="text-faded" style="font-size: small">
-                    Final Result/ Outputs
+                    <h3 style="color: #ffd23c;">Features</h3>
+                    <p class="text-faded" style="font-size: small;color:black">
+                    With the help  of dropdown list user can choose whihc dataset to be loaded. Once dataset is loaded details of data it can be displayed such as Summary of data, Plotting scatter plot, Structure and Dimensionof of data.
+                    For statistic part as per the selection text box and range will be displayed which will show correspondig graph and will change accoding to the users selction. For probabilistic models 2 graphs are displayed 1) Histogram 2) Dotted Line graph.
+                    under Machine Learning SVR and Simple Linear Regression displays plot which contais predictive line in Blue color and actual vallues as sccoter plotsin Red Color. In decision tree the splitting is displayed at different level.
                     </p>
-                    <h4>Limitation/Future Work</h4>
-                    <p class="text-faded" style="font-size: small">
-                    Scope of changes or improvment/ Future scope
+                    <h3 style="color: #ffd23c;">Dependencies</h3>
+                    <p class="text-faded" style="font-size: small;color:black">
+                    RStudio, Shiny, e1071, ggplot2, caTools, party
                     </p>
-                    <ul class="text-faded" style="font-size: small">
-                        <li>
-                            <h5>Some heading/bullet point
-                                <p>
-                                    <br>
-                                    Some more explanation
-                                </p>
-                                <p>
-                                    <br>
-                                </p>
-                            </h5>Explanation/Description
-                        </li>
-                        <li>
-                            <h5>Some heading/bullet point</h5>Explanation/Description
-                        </li>
-                    </ul> 
                     <p><br></p>
-                   <a href="https://docs.google.com/presentation/d/1ewfbc-4nWLGnuFK5DeA7jikWK7DlALVheyr765B7KA8/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">View Presentation</a>
                    <a href="https://github.com/tirth-pipalia/Employee_Churn_Prediction/blob/main/Employee_Churn_Prediction.ipynb" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
                    <a href="https://docs.google.com/a/berkeley.edu/document/d/1vtCwW_MkwTBmH51UHi6HuffCid3kYy5zv86zx1g8YSg/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Link to Project Report</a>
                 </div>
-                <div class="col-lg-4 text-center" style="padding-top: 100px">
-                <img src="img/portfolio/1.jpg" class="img-responsive" alt="" style="margin :auto" height="300" width="300">
-                <p>Fig. Title</p>
-                <img src="img/portfolio/1.jpg" class="img-responsive" alt="" style="margin :auto" height="300" width="300">
-                <p>Fig. Title</p>
+                <div class="col-lg-4 text-center">
+                    <img src="img/Shiny1.jpg" class="img-responsive" alt="" style="margin :auto;" height="400" width="400">
+                    <p style="font-size: smaller;">Binomial Model</p>
+                    <img src="img/Shiny2.jpg" class="img-responsive" alt="" style="margin :auto;" height="400" width="400">
+                    <p style="font-size: smaller;">Poission Model</p>
+                    <img src="img/Shiny3.jpg" class="img-responsive" alt="" style="margin :auto;" height="400" width="400">
+                    <p style="font-size: smaller;">Suppport Vector Rseggresor</p>
+                    <img src="img/Shiny4.jpg" class="img-responsive" alt="" style="margin :auto;" height="400" width="400">
+                    <p style="font-size: smaller;">Decision Tree</p>
                 </div>
             </div>
         </div>
@@ -141,7 +133,5 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
-
 </body>
-
 </html>
