@@ -41,12 +41,7 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+
                 <a class="navbar-brand page-scroll"  href="index.html">Home</a>
             </div>
 
@@ -54,73 +49,75 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="index.html#contact">Contact</a>
+                        <div class="navbar-header">
+                            <a class="navbar-brand page-scroll"  href="Resume/Tirth_SD_RESUME.pdf" style="font-size: small" target="_blank">Resume</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="navbar-header">
+                            <a class="navbar-brand page-scroll"  href="index.html#portfolio" style="font-size: small;">Projects & Certificate</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="navbar-header">
+                            <a class="navbar-brand page-scroll"  href="index.html#contact" style="font-size: small;">Contact</a>
+                        </div>
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
+        <!-- /.container-fluid --> 
     </nav>
 
     <section class="bg-primary" id="about">
+        <head>
+            <h1 class="text-center">YouTube Audio Downloader</h1>
+</head>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 text-center" style="text-align: left">
-                    <!-- <hr class="light"> -->
-                    <head>
-                        <h2>Employee Churn Prediction</h2>
-                        <a href="https://docs.google.com/presentation/d/1ewfbc-4nWLGnuFK5DeA7jikWK7DlALVheyr765B7KA8/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">View Presentation</a>
-                        <a href="https://github.com/tirth-pipalia/Employee_Churn_Prediction/blob/main/Employee_Churn_Prediction.ipynb" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
-                        <a href="https://docs.google.com/a/berkeley.edu/document/d/1vtCwW_MkwTBmH51UHi6HuffCid3kYy5zv86zx1g8YSg/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Link to Project Report</a>         
-                    </head>
                     <p></p>
-                    <h4>THE PROBLEM</h4>
-                    <p class="text-faded" style="font-size: small">
-                        Here will be the objective/goal/motivation for 
-                        project
+                    <h3 style="color: #ffd23c;"><i>Concept</i></h3>
+                    <p class="text-faded" style="font-size: medium;text-align:justify;color:black">
+                    Youtube Downloader is application whihc allows user to download audio from
+                     the youtube videos so that user 
+                    don't have to perform auxiliary steps to convert a video into audio format.
+                    This is helpful and provides flexiblity to userwho just want to save
+                     their favourite songs or playlist directly in device with less storage
+                      space because audio will requre less space compared to video.
+                    Also several audio books, speechs, online lectures with instruction, etc.
+                     can be downloaded. User just have to provide the link of youtube video. Even
+                      playlist containg several videos will get downloaded as individual file  
+                    which can be played using any multimedia player.
                     </p>
-                    <h4>SOLUTION</h4>
-                    <p class="text-faded" style="font-size: small">
-                    Description of the project i.e. technology used/methodology/approch/
+                    <h3 style="color: #ffd23c;"><i>Approch</i></h3>
+                    <p class="text-faded" style="font-size: small;color:black">
+                    For developing this application only 1 external package is required that is youtube_dl. 
+                    It is an open-source download manager for video and audio from YouTube and over 1000 other 
+                    video hosting websites. Also current code is adapted according to python 3.7 version so result may vary 
+                    when executed in different version of python. It will also require ffmpeg software for windows to 
+                    handel videos, audios and other multimedia files and streams.
                     </p>
-                    <h4>Achivement</h4>
-                    <p class="text-faded" style="font-size: small">
-                    Final Result/ Outputs
+                    <h3 style="color: #ffd23c;">Requirements</h3>
+                    <p class="text-faded" style="font-size: small;color:black">
+                    <a href="https://www.python.org/downloads/" style="color: black;"><u>Python 3.7</u></a> <br>
+                    <a href="https://pypi.org/project/youtube_dl/" style="color: black;"><u>youtube_dl</u></a><br>
+                    <a href="https://ffmpeg.org/download.html" style="color: black;"><u>ffmpeg</u></a>
                     </p>
-                    <h4>Limitation/Future Work</h4>
-                    <p class="text-faded" style="font-size: small">
-                    Scope of changes or improvment/ Future scope
-                    </p>
-                    <ul class="text-faded" style="font-size: small">
-                        <li>
-                            <h5>Some heading/bullet point
-                                <p>
-                                    <br>
-                                    Some more explanation
-                                </p>
-                                <p>
-                                    <br>
-                                </p>
-                            </h5>Explanation/Description
-                        </li>
-                        <li>
-                            <h5>Some heading/bullet point</h5>Explanation/Description
-                        </li>
-                    </ul> 
-                    <p><br></p>
-                   <a href="https://docs.google.com/presentation/d/1ewfbc-4nWLGnuFK5DeA7jikWK7DlALVheyr765B7KA8/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">View Presentation</a>
-                   <a href="https://github.com/tirth-pipalia/Employee_Churn_Prediction/blob/main/Employee_Churn_Prediction.ipynb" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
-                   <a href="https://docs.google.com/a/berkeley.edu/document/d/1vtCwW_MkwTBmH51UHi6HuffCid3kYy5zv86zx1g8YSg/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Link to Project Report</a>
+                    
+                   <a href="assets/audio_downloader.py" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
                 </div>
-                <div class="col-lg-4 text-center" style="padding-top: 100px">
-                <img src="img/portfolio/1.jpg" class="img-responsive" alt="" style="margin :auto" height="300" width="300">
-                <p>Fig. Title</p>
-                <img src="img/portfolio/1.jpg" class="img-responsive" alt="" style="margin :auto" height="300" width="300">
-                <p>Fig. Title</p>
-                <audio controls autoplay>
-                    <source src="assets/Free Music - No copyright music-  Background Music - Instrumental  --4sG7Mh94vtI.mp3" type="audio/mpeg">s
-                  </audio>
+                <div class="col-lg-4 text-center">
+                    <img src="img/youtube1.jpg" class="img-responsive" alt="" style="margin :auto;" height="400" width="300">
+                    <p style="font-size: smaller;">Code snippet</p>
+                    <img src="img/youtube2.jpg" class="img-responsive" alt="" style="margin :auto;" height="400" width="300">
+                    <p style="font-size: smaller;">Output</p>
+                    <br>
+                    <audio controls autoplay>
+                        <source src="assets/George Ezra - Shotgun (Lyric Video)-v_B3qkp4nO4.mp3" type="audio/mpeg">
+                      </audio>
+                      <p style="font-size: small;">George Ezra-Shotgun</p>
                 </div>
             </div>
         </div>
