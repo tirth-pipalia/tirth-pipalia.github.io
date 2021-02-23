@@ -41,20 +41,22 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll"  href="index.html">Home</a>
             </div>
+
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="index.html#contact">Contact</a>
+                        <div class="navbar-header">
+                            <a class="navbar-brand page-scroll"  href="Resume/Tirth_SD_RESUME.pdf" target="_blank" style="font-size: small">Resume</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="navbar-header">
+                            <a class="navbar-brand page-scroll"  href="index.html#contact" style="font-size: small;">Contact</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -64,60 +66,142 @@
     </nav>
 
     <section class="bg-primary" id="about">
+        <head>
+            <marquee behavior="slides" hspase=1 vspace="2" direction="left" scrollamount=15>
+                <h2 class="text-center"><b><u style="font-size: xx-large;">Medicine Consumer Review: Sentiment Analysis</u></b></h2>
+            </marquee>
+             </head>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 text-center" style="text-align: left">
                     <!-- <hr class="light"> -->
-                    <head>
-                        <h2>Text Generater</h2>
-                        <a href="https://docs.google.com/presentation/d/1ewfbc-4nWLGnuFK5DeA7jikWK7DlALVheyr765B7KA8/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">View Presentation</a>
-                        <a href="https://github.com/tirth-pipalia/Employee_Churn_Prediction/blob/main/Employee_Churn_Prediction.ipynb" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
-                        <a href="https://docs.google.com/a/berkeley.edu/document/d/1vtCwW_MkwTBmH51UHi6HuffCid3kYy5zv86zx1g8YSg/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Link to Project Report</a>         
-                    </head>
+
                     <p></p>
-                    <h4>THE PROBLEM</h4>
-                    <p class="text-faded" style="font-size: small">
-                        Here will be the objective/goal/motivation for 
-                        project
+                    <h3 style="color: black;"><i>THE TASK</i></h3>
+                    <p class="text-faded" style="font-size: medium;text-align:justify">
+                        Creating classification Machine Learning models for predicting the sentiment of the customer on Medicine consumption 
+                        based on their review through a textual comment. Model should be either Support Vector Classifier or Naive Bayes Classifier.
+                        Based on the performance of model on train-set best performing model should be applied on test-set and predict the ratings of the review.
+
                     </p>
-                    <h4>SOLUTION</h4>
-                    <p class="text-faded" style="font-size: small">
-                    Description of the project i.e. technology used/methodology/approch/
+                    <h3 style="color: black;"><i>APPLIED SOLUTION</i></h3>
+                    <p class="text-faded" style="font-size: small;">
+                        When working with raw text it is essential to make it adaptable for Machine Learning models. for this we need some exteranl packages which help to transform raw textual data.
+                        <br> <b style="font-size: large;">1. Importing Dependencies:</b> <br>
+                        - bs4: Also known as BeautifulSoup 4 a python library useful for pulling data out of HTML and XMLfiles. <br>
+                        - nltk: It consists of the most common algorithms such as tokenizing, part-of-speech tagging, stemming, sentiment analysis, topic segmentation, and named entity recognition.
+                       <br> <br> <b style="font-size: medium;">2. Data pre-processing:</b> <br> 
+                        - def normalizer():
+                        Using ‘BeautifulSoup’ function from ‘bs4’ library and ‘lxml’ toolkit to remove XML and HTML encoding
+from tweets which come due to some hyperlink present in tweet. Also, Regular Expression(Regrex) is
+used to remove any numbers hyperlinks hastags, etc this expression is implemented using manual
+scripts. Expression used in this code is: <b style="font-size: larger;">"(@[A-Za-z0-9]+)|([^A-Za-z \t])|(\w+:\/\/\S+)"</b> <br>
+ <br>
+As we cannot explicitly implement machine learning model on raw text, we need to split each word like this
+<b style="font-size: larger;">['one', 'morning,', 'when', 'gregor', 'samsa', 'woke', 'from']</b>. And convert all
+the words in lowercase as case sensitivity changes the impact of same word for machine. <br> <br>
+
+To remove stop words, like to, and, the, etc. from the tweet I have implemented stopword() function from
+nltk.corprus librar. We need to mention ‘english’ as attribute to remove stop words of English language there
+are 127 stop words for English language in NLTK. <br> <br>
+
+Lemmatizing words having similar meaning despite its tense using WordNet Corpus. e.g. Was -> (to) be, better -
+> good, cats -> cat keeping the basic meaning of the word.  <br> <br>
+
+<b style="font-size: medium;">3. Data Balancing:</b> <br>
+SMOTE(Synthetic Minority Over-sampling Technique) is used as the graph shows data is highly
+imbalanced and hence to avoid model taking bias decision which can affect the overall output of the deployed
+model. 
+
+<b style="font-size: large;">4. Vectorizer:</b> <br>
+TfidfVectorizer (): It is a function from sklearn library under feature_extraction.text class it
+takes several attributes: <br> <b style="font-size: medium;">1)</b> min_df – When making the vocabulary, it ignores strictly terms that
+have documented for less than given value having default value = 1. In this code min_df is set as 5. <br> <b style="font-size: medium;">2)</b>
+ngram_range – It extracts the words as a single word based on the lower and upper boundary of the
+range of n-values. Which is (1, 2) for this code hence including unigrams and bigrams. tfidf =
+TfidfVectorizer(sublinear_tf=True, min_df=5, norm='l2', ngram_range=(1, 2))
+this are parameters for model creation code.
+
+
                     </p>
-                    <h4>Achivement</h4>
-                    <p class="text-faded" style="font-size: small">
-                    Final Result/ Outputs
-                    </p>
-                    <h4>Limitation/Future Work</h4>
-                    <p class="text-faded" style="font-size: small">
-                    Scope of changes or improvment/ Future scope
-                    </p>
-                    <ul class="text-faded" style="font-size: small">
-                        <li>
-                            <h5>Some heading/bullet point
-                                <p>
-                                    <br>
-                                    Some more explanation
-                                </p>
-                                <p>
-                                    <br>
-                                </p>
-                            </h5>Explanation/Description
-                        </li>
-                        <li>
-                            <h5>Some heading/bullet point</h5>Explanation/Description
-                        </li>
-                    </ul> 
+                    <h3 style="color: black;"><i>EVALUATION</i></h3>
+                    <table border="2" bordercolor="black">
+                        <caption style="color: #ffc107;">Support Vector Classifier</caption>
+                        <thead>
+                            <tr style="color: #ffc107;" bgcolor="black">
+                                <th style="text-align: center;">Mean Cross Validation Accuracy</th>
+                                <th style="text-align: center;">Best Cross validation Accuracy</th>
+                                <th style="text-align: center;">True Positive</th>
+                                <th style="text-align: center;">True Negative</th>
+                                <th style="text-align: center;">False Positive</th>
+                                <th style="text-align: center;">False Negative</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td  style="text-align: center">0.9107879430626212 </td>
+                                <td  style="text-align: center">0.9201716738197425 </td>
+                                <td style="text-align: center;">422</td>
+                                <td style="text-align: center;">1722</td>
+                                <td style="text-align: center;">55</td>
+                                <td style="text-align: center;">131</td>
+                                </tr>
+                            
+                        </tbody>
+                    </table>
+                    
+                        <table border="2" bordercolor="black">
+                            <caption style="color: #ffc107;">Naive Bayes Classifiers</caption>
+                            <thead>
+                                <tr style="color: #ffc107;" bgcolor="black">
+                                    <th style="text-align: center;">Mean Cross Validation Accuracy</th>
+                                    <th style="text-align: center;">Best Cross validation Accuracy</th>
+                                    <th style="text-align: center;">True Positive</th>
+                                    <th style="text-align: center;">True Negative</th>
+                                    <th style="text-align: center;">False Positive</th>
+                                    <th style="text-align: center;">False Negative</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: center;">0.8327322356077721</td>
+                                    <td style="text-align: center;">0.8434148434148434</td>
+                                    <td style="text-align: center;">183</td>
+                                    <td style="text-align: center;">1783</td>
+                                    <td style="text-align: center;">13</td>
+                                    <td style="text-align: center;">352</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                        <h3 style="color: black;"><i>CONCLUSION</i></h3>
+                        <p class="text-faded" style="font-size: small;">
+                            Based on the outcomes of the number it tells that SVC is performing well as compared to NBC on
+training set MedReviews.csv. Best Cross-Validation accuracy for SVC is 92% making difference of 8%
+from that of NBC. Also, average mean Cross-Validation value for SVC is higher than NBC by 8%. Based
+on this, the SVC model is saved, and the vocabulary file is generated using this knowledge about the
+data for deployment process. After performing data normalization and cleansing SVC model is
+deployed on NoRatings.csv which will be test set. The vocabulary file generated from model creation
+code and SVC file which is created when model is saved will be implemented during deployment
+process
+                        </p>
                     <p><br></p>
-                   <a href="https://docs.google.com/presentation/d/1ewfbc-4nWLGnuFK5DeA7jikWK7DlALVheyr765B7KA8/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">View Presentation</a>
-                   <a href="https://github.com/tirth-pipalia/Employee_Churn_Prediction/blob/main/Employee_Churn_Prediction.ipynb" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
-                   <a href="https://docs.google.com/a/berkeley.edu/document/d/1vtCwW_MkwTBmH51UHi6HuffCid3kYy5zv86zx1g8YSg/edit?usp=sharing" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Link to Project Report</a>
+                   <a href="https://github.com/tirth-pipalia/Text_Mining_Medicine_review/blob/main/TextMining.py" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
+                   <a href="Resume/Report_Text_Mining.pdf" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Project Reports</a>
                 </div>
-                <div class="col-lg-4 text-center" style="padding-top: 100px">
-                <img src="img/portfolio/1.jpg" class="img-responsive" alt="" style="margin :auto" height="300" width="300">
-                <p>Fig. Title</p>
-                <img src="img/portfolio/1.jpg" class="img-responsive" alt="" style="margin :auto" height="300" width="300">
-                <p>Fig. Title</p>
+                <div class="col-lg-4 text-center">
+                <img src="img/text1.JPG" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">Test Set</p>
+                <img src="img/text2.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">Normalized Test Set</p>
+                <img src="img/text3.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">Test Set</p>
+                <img src="img/text4.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">Normalized Test Set</p>
+                <img src="img/text5.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="500">
+                <p style="font-size: smaller;">Predictions</p>
+                <img src="img/text6.jpg" class="img-responsive" alt="" style="margin :auto" height="500" width="400">
+                <p style="font-size: smaller;">SMOTE: Balancing Data</p>
                 </div>
             </div>
         </div>
