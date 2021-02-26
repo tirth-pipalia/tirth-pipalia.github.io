@@ -72,55 +72,46 @@
 
     <section class="bg-primary" id="about">
         <head>
-            <h1 class="text-center">Comming Soon...</h1>
+            <h1 class="text-center">Text Generator</h1>
 </head>
-       <!--- <div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-8 text-center" style="text-align: left">
                     <p></p>
                     <h3 style="color: #ffd23c;"><i>Concept</i></h3>
                     <p class="text-faded" style="font-size: medium;text-align:justify;color:black">
-                    Youtube Downloader is application whihc allows user to download audio from
-                     the youtube videos so that user 
-                    don't have to perform auxiliary steps to convert a video into audio format.
-                    This is helpful and provides flexiblity to userwho just want to save
-                     their favourite songs or playlist directly in device with less storage
-                      space because audio will requre less space compared to video.
-                    Also several audio books, speechs, online lectures with instruction, etc.
-                     can be downloaded. User just have to provide the link of youtube video. Even
-                      playlist containg several videos will get downloaded as individual file  
-                    which can be played using any multimedia player.
-                    </p>
+                        Text Generator is an application which allows user to generate text in 66 different scripts. User can either upload the video file or can use their system's microphone to listen to the voice and generate the text. Most of the content on social media platforms like youtube, Facebook, etc. is in the English Language. So for us who are learning English, they can convert the audio into a script that is in their desired language and can learn how to pronounce. This code snippet can be added to any of the websites which are accessed by people across the globe. This can also help in generating caption for from the meetings, online lecture if the application does not provide a choice of the desired language.   
+                </p>
                     <h3 style="color: #ffd23c;"><i>Approch</i></h3>
-                    <p class="text-faded" style="font-size: small;color:black">
-                    For developing this application only 1 external package is required that is youtube_dl. 
-                    It is an open-source download manager for video and audio from YouTube and over 1000 other 
-                    video hosting websites. Also current code is adapted according to python 3.7 version so result may vary 
-                    when executed in different version of python. It will also require ffmpeg software for windows to 
-                    handel videos, audios and other multimedia files and streams.
-                    </p>
+                    <p class="text-faded" style="font-size: small;color:black;text-align:justify">
+                        For developing this application 2 external libraries are required: 1. speech_recognition 2. moviepy.
+                        speech_recognition from the name itself indicates that is heps to handle the voice and to generate script. recofnize_goole() is the core function of this application this function requires language as an argument in which the user will mention the language code for which the text will be generated. eg: for text in French use "fr-fr" code. moviepy package helps to convert the uploaded video file into audio .wav form which is then processed for text generation.
+                </p>
                     <h3 style="color: #ffd23c;">Requirements</h3>
                     <p class="text-faded" style="font-size: small;color:black">
                     <a href="https://www.python.org/downloads/" style="color: black;"><u>Python 3.7</u></a> <br>
-                    <a href="https://pypi.org/project/youtube_dl/" style="color: black;"><u>youtube_dl</u></a><br>
+                    <a href="https://pypi.org/project/SpeechRecognition/" style="color: black;"><u>speech_recognition</u></a><br>
+                    <a href="https://pypi.org/project/moviepy/" style="color: black;"><u>moviepy</u></a><br>
                     <a href="https://ffmpeg.org/download.html" style="color: black;"><u>ffmpeg</u></a>
                     </p>
                     
-                   <a href="assets/audio_downloader.py" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
+                   <a href="https://github.com/tirth-pipalia/Multilingual-Text-Generator/blob/main/Multilingual%20Text%20Generator.ipynb" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Source Code</a>
+                   <a href="lan_code.html" class="btn btn-primary btn-xl page-scroll" target="_blank" style="background-color: #ffc107">Language Code</a>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <img src="img/youtube1.jpg" class="img-responsive" alt="" style="margin :auto;" height="400" width="300">
-                    <p style="font-size: smaller;">Code snippet</p>
-                    <img src="img/youtube2.jpg" class="img-responsive" alt="" style="margin :auto;" height="400" width="300">
-                    <p style="font-size: smaller;">Output</p>
+                    <img src="img/gen1.jpg" class="img-responsive" alt="" style="margin :auto;" height="400" width="300">
+                    <a style="font-size:small; color:white" href="lan_code.html" target="_blank">Language Code</a> 
+                    <p> <br></p>
+                    <img src="img/gen2.jpg" class="img-responsive" alt="" style="margin :auto;" height="400" width="300">
+                    <p style="font-size: small;">Output</p>
                     <br>
                     <audio controls autoplay>
-                        <source src="assets/George Ezra - Shotgun (Lyric Video)-v_B3qkp4nO4.mp3" type="audio/mpeg">
+                        <source src="assets/trial.m4a" type="audio/mpeg">
                       </audio>
-                      <p style="font-size: small;">George Ezra-Shotgun</p>
+                      <p style="font-size: small;">Voice Note</p>
                 </div>
             </div>
-        </div> -->
+        </div>
     </section>
 
     <!-- jQuery -->
