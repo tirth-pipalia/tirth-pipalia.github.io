@@ -4,11 +4,8 @@ ydl_opts = {
     'writethumbnail': True,
     'postprocessors': [
         {
-            'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'mp3',
-        },
-        {'key': 'EmbedThumbnail'},
-        {'key': 'FFmpegMetadata'},
+            # cannot keep this code public please read the documentation of youtube_dl
+            # for futher assitance please feel free to reach me
     ],
 }
 d = input("Paste here : ")
